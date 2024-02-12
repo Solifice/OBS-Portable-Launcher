@@ -1,6 +1,6 @@
 # OBS Portable Launcher
 
-<font color="red">**Use at your own risk. I am not responsible for any consequences.**</font>
+## **Use at your own risk. I am not responsible for any consequences.**
 
 ## About
 **OBS Studio** is software designed for capturing, compositing, encoding, recording, and streaming video content, efficiently. [Know More](https://obsproject.com)
