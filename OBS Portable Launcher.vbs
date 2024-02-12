@@ -10,7 +10,7 @@ folderPath = "obs"
 ' Path to your OBS executable (Configurable)
 obsAppPath = driveLetter & "\bin\64bit\obs64.exe"
 
-' Arguments for your OBS executable
+' Arguments for your OBS executable (Configurable) (Advance) (-p is mandatory to start obs executable in portable mode)
 arguments = "-p"
 
 ' Check if drive letter is available
