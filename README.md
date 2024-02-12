@@ -25,7 +25,7 @@ The script can be downloaded by either cloning it or downloading it from the rel
 7. Now, while keeping OBS open, create your scenes and provide the asset paths using the drive letter "O:". This ensures that OBS references the media files from the "assets" folder located on the mounted drive.
 8. You're done! Simply copy and paste the "stream" folder to your USB drive, and you can use it on other Windows devices without any hassle.
 
-9. ## Contributions
+## Contributions
 - Report bugs, ask questions and suggest new features by creating a new issue.
 - Donate to [**Solifice**](https://linktr.ee/solifice).
 
