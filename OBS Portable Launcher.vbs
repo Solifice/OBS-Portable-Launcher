@@ -1,3 +1,9 @@
+'*******************************************************************************
+' Script Name:   OBS Portable Launcher.vbs
+' Version:       1.1
+' Author:        Solifice
+'*******************************************************************************
+
 Set objShell = CreateObject("WScript.Shell")
 Set objFSO = CreateObject("Scripting.FileSystemObject")
 
