@@ -1,6 +1,6 @@
 '*******************************************************************************
 ' Script Name:   OBS Portable Launcher.vbs
-' Version:       1.1
+' Version:       1.2
 ' Author:        Solifice
 '*******************************************************************************
 
@@ -55,9 +55,6 @@ If intAnswer = vbYes Then
 	' Launch OBS
 	objShell.Run """" & obsAppPath & """ " & arguments, 1, True
 	
-	' Wait for OBS to close using WMI event subscription
-	WaitForProcessTermination Mid(obsAppPath, InStrRev(obsAppPath, "\") + 1)
-	
 	RemoveSubst()
 	Cleanup()
 End If
@@ -73,25 +70,3 @@ Sub Cleanup()
     Set objShell = Nothing
     Set objFSO = Nothing
 End Sub
-
-' Function to wait for process termination using WMI event subscription
-Sub WaitForProcessTermination(processName)
-    Dim objWMIService, colEvents, objEvent
-    Set objWMIService = GetObject("winmgmts:\\.\root\cimv2")
-    Set colEvents = objWMIService.ExecNotificationQuery("SELECT * FROM __InstanceDeletionEvent WITHIN 1 WHERE TargetInstance ISA 'Win32_Process' AND TargetInstance.Name = '" & processName & "'")
-
-    ' Wait for process termination event
-    Do
-        On Error Resume Next
-        Set objEvent = colEvents.NextEvent
-        On Error GoTo 0
-
-        If Not objEvent Is Nothing Then Exit Do
-        WScript.Sleep 100  ' Wait for a short time before trying again
-    Loop
-
-    Set objWMIService = Nothing
-    Set colEvents = Nothing
-    Set objEvent = Nothing
-End Sub
-
